@@ -1,0 +1,7 @@
+site_name: SCOPD SIEM
+theme:
+  name: material
+
+nav:
+  - Features: index.md
+
