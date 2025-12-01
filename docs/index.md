@@ -6,4 +6,4 @@ SCOPD is a lightweight SIEM with custom integrations and enhancements.
 
 - IOC enrichment (Indicator of Compromise)
 
-![Scopd DLP](docs/scopd.png)
+![Scopd DLP](scopd.jpg)
