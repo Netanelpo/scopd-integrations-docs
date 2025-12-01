@@ -1,9 +1,9 @@
-# SCOPD SIEM – Integrations
+# SCOPD SIEM – Features
 
 SCOPD is a lightweight SIEM with custom integrations and enhancements.
 
-## 🔥 Core Integrations
+## 🔥 Core Features
 
-- IOC enrichment
+- IOC enrichment (Indicator of Compromise)
 
 

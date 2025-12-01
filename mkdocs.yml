@@ -3,5 +3,5 @@ theme:
   name: material
 
 nav:
-  - Integrations: index.md
+  - Features: index.md
 
