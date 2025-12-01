@@ -4,4 +4,5 @@ theme:
 
 nav:
   - Features: index.md
+  - Integrations: integrations.md
 
