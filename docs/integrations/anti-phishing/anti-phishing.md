@@ -1,4 +1,4 @@
-# Wazuh integration with Anti-phishing — Step-by-step setup
+# SCOPD integration with Anti-phishing — Step-by-step setup
 
 ## 1) Setting up the Wazuh manager (one rule)
 
