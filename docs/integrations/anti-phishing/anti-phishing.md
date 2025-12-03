@@ -1,6 +1,6 @@
 # SCOPD SIEM integration with Anti-phishing — Step-by-step setup
 
-## 1) Setting up the Wazuh manager (one rule)
+## 1) Setting up the SIEM manager (one rule)
 
 - File: /var/ossec/etc/rules/local_rules.xml 
 
