@@ -8,19 +8,19 @@ Insert the block:
 ```md
 <group name="phishing,local,">
 
-<rule id="100180" level="12">
+  <rule id="100180" level="12">
 
-<decoded_as>json</decoded_as>
+    <decoded_as>json</decoded_as>
 
-<if_sid>86600</if_sid>
+    <if_sid>86600</if_sid>
 
-<field name="event_type">^phishing_link_click$</field>
+    <field name="event_type">^phishing_link_click$</field>
 
-<description>Phishing Simulation: User clicked on a phishing link. Email: $(user_email)</description>
+    <description>Phishing Simulation: User clicked on a phishing link. Email: $(user_email)</description>
 
-<options>no_full_log</options>
+    <options>no_full_log</options>
 
-</rule>
+  </rule>
 
 </group>
 ```
@@ -38,13 +38,13 @@ Add one block:
 ```md
 <ossec_config>
 
-<localfile>
+  <localfile>
 
-<log_format>syslog</log_format>
+    <log_format>syslog</log_format>
 
-<location>/var/log/syslog</location>
+    <location>/var/log/syslog</location>
 
-</localfile>
+  </localfile>
 
 </ossec_config>
 ```
