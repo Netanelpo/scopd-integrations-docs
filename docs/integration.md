@@ -1,1 +1,1 @@
-![Scopd DLP](scopd.md)
+![Scopd DLP](integrations/scopd.md)
