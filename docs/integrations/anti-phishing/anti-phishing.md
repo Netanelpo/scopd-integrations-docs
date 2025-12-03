@@ -1,4 +1,4 @@
-# SCOPD integration with Anti-phishing — Step-by-step setup
+# SCOPD SIEM integration with Anti-phishing — Step-by-step setup
 
 ## 1) Setting up the Wazuh manager (one rule)
 
