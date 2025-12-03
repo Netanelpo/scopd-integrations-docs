@@ -1,4 +1,4 @@
-# SCOPD SIEM integration with Anti-phishing - Step-by-step setup
+# SCOPD SIEM integration with Anti-phishing
 
 ## 1) Setting up the SIEM manager (one rule)
 
