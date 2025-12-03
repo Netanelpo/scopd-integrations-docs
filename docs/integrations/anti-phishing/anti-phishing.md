@@ -5,7 +5,7 @@
 - File: /var/ossec/etc/rules/local_rules.xml 
 
 Insert the block:
-
+```md
 <group name="phishing,local,">
 
 <rule id="100180" level="12">
@@ -23,7 +23,7 @@ Insert the block:
 </rule>
 
 </group>
-
+```
 - Restart the manager:
 
 sudo systemctl restart wazuh-manager
@@ -35,7 +35,7 @@ sudo systemctl restart wazuh-manager
 - Agent file: /var/ossec/etc/ossec.conf
 
 Add one block:
-
+```md
 <ossec_config>
 
 <localfile>
@@ -47,7 +47,7 @@ Add one block:
 </localfile>
 
 </ossec_config>
-
+```
 Restart the agent
 
 sudo systemctl restart wazuh-agent
