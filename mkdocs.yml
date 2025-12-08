@@ -5,4 +5,4 @@ theme:
 nav:
   - Features: index.md
   - Integrations: integration.md
-
+  - XDR: xdr.md
