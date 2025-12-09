@@ -1,4 +1,4 @@
-# SCOPD SIEM integration with SCOPD DLP
+# Integration with SCOPD DLP
 
 ## 1.) SIEM Manager configuration
 
@@ -29,7 +29,7 @@ sudo systemctl restart wazuh-manager
 
 sudo ss -lunpt | grep 514
 
-You should see a line with wazuh-remoted on *:514.
+You should see a line with SIEM-remoted on *:514.
 
 ## 2). DLP configuration
 
@@ -37,9 +37,9 @@ You should see a line with wazuh-remoted on *:514.
 
 Specify:
 
-udp://<WAZUH_IP>:514
+udp://<SIEM_IP>:514
 
-Where <WAZUH_IP> is the public address of Wazuh Manager (e.g., 45.136.16.242).
+Where <SIEM_IP> is the public address of SIEM Manager (e.g., 45.136.16.242).
 
 - Tick the checkboxes: - Computer events - User events
 
