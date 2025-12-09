@@ -1,4 +1,4 @@
-# SCOPD SIEM integration with VirusTotal
+# Integration with VirusTotal
 
 ## 1) Configure integration on the Manager
 
