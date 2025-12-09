@@ -19,11 +19,11 @@ SIEM comes with a set of default scripts used in Active Response. These scripts 
 
 The <command> block contains information about the action to be executed on the SIEM agent:
 
-* <name>: Sets a name for the command. In this case, firewall-drop.
+* ```<name>```: Sets a name for the command. In this case, firewall-drop.
 
-* <executable>: Specifies the active response script or executable that must run upon a trigger. In this case, it’s the firewall-drop executable.
+* ```<executable>```: Specifies the active response script or executable that must run upon a trigger. In this case, it’s the firewall-drop executable.
 
-* <timeout_allowed>: Allows a timeout after a period of time. This tag is set to yes here, which represents a stateful active response.
+* ```<timeout_allowed>```: Allows a timeout after a period of time. This tag is set to yes here, which represents a stateful active response.
 
 <details>
    <summary>Note</summary>
@@ -49,13 +49,13 @@ Note You can create your own custom script to block an IP address or perform any
 
 </details>
 
-* <command>: Specifies the command to configure. This is the command name firewall-drop defined in the previous step.
+* ```<command>```: Specifies the command to configure. This is the command name firewall-drop defined in the previous step.
 
-* <location>: Specifies where the command executes. Using the local value means that the command executes on the monitored endpoint where the trigger event occurs.
+* ```<location>```: Specifies where the command executes. Using the local value means that the command executes on the monitored endpoint where the trigger event occurs.
 
-* <rules_id>: The Active Response module executes the command if rule ID 5763 - SSHD brute force trying to get access to the system fires.
+* ```<rules_id>```: The Active Response module executes the command if rule ID 5763 - SSHD brute force trying to get access to the system fires.
 
-* <timeout>: Specifies how long the active response action must last. In this use case, the module blocks for 180 seconds the IP address of the endpoint carrying out the brute-force attack.
+* ```<timeout>```: Specifies how long the active response action must last. In this use case, the module blocks for 180 seconds the IP address of the endpoint carrying out the brute-force attack.
 
 3. Restart the SIEM manager service to apply the changes:
 
