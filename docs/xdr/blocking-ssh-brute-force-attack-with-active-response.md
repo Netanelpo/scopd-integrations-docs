@@ -1,4 +1,4 @@
-## SIEM server
+## SIEM server configuration
 
 SIEM comes with a set of default scripts used in Active Response. These scripts are located in the /var/ossec/active-response/bin/ directory on Linux/Unix endpoints. The firewall-drop active response script works with Linux/Unix operating systems. It uses iptables to block malicious IP addresses.
 
@@ -112,7 +112,7 @@ PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
 12 packets transmitted, 0 received, 100% packet loss, time 11000ms
 ```
 
-## Generating an alert when an active response is fired
+## Firing active response
 
 Monitored Linux/Unix endpoints have a log file at /var/ossec/logs/active-responses.log where SIEM registers the active response activities. By default, the SIEM server monitors the Active Response log file. You can find the relevant section in the Wazuh server /var/ossec/etc/ossec.conf configuration file as shown below:
 
