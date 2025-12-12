@@ -3,3 +3,5 @@
 [SCOPD DLP](integrations/dlp/dlp.md)
 
 [VirusTotal](integrations/virustotal/virustotal.md)
+
+[FortiGate](integrations/fortigate/fortigate.md)
