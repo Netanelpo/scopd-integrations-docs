@@ -1,4 +1,4 @@
-# FortiGate integration with SIEM gg
+# FortiGate integration with SIEM
 
 ## 1. Enable Syslog/UDP reception on the SIEM Manager
 
@@ -6,7 +6,7 @@ Open the SIEM manager configuration file:
 
 ```md
 sudo nano /var/ossec/etc/ossec.conf
-````
+```
 
 Add the `<remote>` block (example for UDP/514):
 
