@@ -4,7 +4,7 @@
 
 Open the SIEM manager configuration file:
 
-```bash
+```md
 sudo nano /var/ossec/etc/ossec.conf
 ````
 
@@ -26,8 +26,6 @@ Restart the SIEM manager to apply the changes:
 ```bash
 sudo systemctl restart wazuh-manager
 ```
-
----
 
 ## 2. Configure Syslog/UDP forwarding on FortiGate
 
