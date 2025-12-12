@@ -1,4 +1,4 @@
-# FortiGate integration with SIEM
+# FortiGate integration with SIEM gg
 
 ## 1. Enable Syslog/UDP reception on the SIEM Manager
 
