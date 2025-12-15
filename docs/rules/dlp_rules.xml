@@ -1,0 +1,17 @@
+<group name="dlp,">
+
+    <rule id="110108" level="12">
+
+        <match>event_type="108"</match>
+
+        <description>DLP: Clipboard with image detected</description>
+
+        <mitre>
+
+            <id>T1115</id>
+
+        </mitre>
+
+    </rule>
+
+</group>
