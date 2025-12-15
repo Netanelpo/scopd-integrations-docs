@@ -3,7 +3,6 @@ theme:
   name: material
 
 nav:
-  - Integrations: integration.md
   - Features: features.md
   - XDR: xdr.md
 
