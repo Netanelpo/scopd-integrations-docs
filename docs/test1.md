@@ -1,7 +1,7 @@
 ---
-syslog_port: 514
+syslog_port: 513
 ---
 
-# Port 1
+# Integration 1
 
 {% include "_template.md" %}
