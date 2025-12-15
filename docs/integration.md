@@ -1,4 +1,4 @@
-[Anti-phishing](integrations/anti-phishing/anti-phishing.md)
+[SCOPD Phishing attack simulator](integrations/anti-phishing/anti-phishing.md)
 
 [SCOPD DLP](integrations/dlp/dlp.md)
 

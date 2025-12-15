@@ -1,26 +1,14 @@
-# Integration with VirusTotal
+---
+integration_name: VirusTotal
+name_tag: virustotal
+group_tag: syscheck
+api_link: https://docs.virustotal.com/docs/please-give-me-an-api-key
+---
+# VirusTotal Integration
 
-## 1) Configure integration on the Manager
+{% include "templates/_manager_integration_template.md" %}
 
-- Edit the SIEM Manager configuration:
-
-sudo nano /var/ossec/etc/ossec.conf
-
-- Insert the integration block right before the last </ossec_config>:
-```md
-<integration>
-
-  <name>virustotal</name>
-
-  <api_key>VIRUS_TOTAL_IP_KEY</api_key>
-
-  <group>syscheck</group>
-
-  <alert_format>json</alert_format>
-
-</integration>
-```
-2) Define monitored folders (FIM)
+## Define monitored folders (FIM)
 
 Edit the SIEM Agent configuration.
 
@@ -36,23 +24,27 @@ file path C:\Program Files (x86)\ossec-agent
 
 <directories check_all="yes" realtime="yes">C:\Users\Public\Downloads</directories>
 ```
-## 3) Restart services
+## Restart Services
 
-- Restart the Manager:
+Run the following commands as applicable:
 
+### Restart SIEM Manager
+```md
 sudo systemctl restart wazuh-manager
+```
 
-- Restart each agent:
-
-Linux agent:
-
+### Restart Linux Agent
+```md
 sudo systemctl restart wazuh-agent
+```
 
-Windows agent (PowerShell as Administrator):
-
+### Restart Windows Agent
+(PowerShell as Administrator)
+```md
 Restart-Service wazuh
+```
 
-## 4) Tests (with directories in paragraph 2)
+## Testing
 
 - Linux tests:
 

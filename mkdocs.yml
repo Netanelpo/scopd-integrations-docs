@@ -3,14 +3,10 @@ theme:
   name: material
 
 nav:
-  - Features: index.md
   - Integrations: integration.md
+  - Features: features.md
   - XDR: xdr.md
-  - Test: test.md
 
 plugins:
   - search
   - macros
-
-extra:
-  syslog_port: 514

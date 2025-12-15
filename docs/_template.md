@@ -1,1 +1,0 @@
-Port {{ syslog_port }}
