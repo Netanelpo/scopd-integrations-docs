@@ -7,3 +7,10 @@ nav:
   - Integrations: integration.md
   - XDR: xdr.md
   - Test: test.md
+
+plugins:
+  - search
+  - macros
+
+extra:
+  syslog_port: 514
