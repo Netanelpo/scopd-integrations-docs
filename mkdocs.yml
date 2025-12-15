@@ -3,6 +3,10 @@ theme:
   name: material
 
 nav:
-  - Features: index.md
   - Integrations: integration.md
+  - Features: features.md
   - XDR: xdr.md
+
+plugins:
+  - search
+  - macros

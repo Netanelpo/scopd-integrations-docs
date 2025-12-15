@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - test
   workflow_dispatch:
 
 permissions:
@@ -19,7 +20,7 @@ jobs:
         with:
           python-version: '3.x'
 
-      - run: pip install mkdocs-material
+      - run: pip install mkdocs-material mkdocs-macros-plugin
 
       - name: Deploy
         run: mkdocs gh-deploy --force

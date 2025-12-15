@@ -1,7 +1,7 @@
-[Anti-phishing](integrations/anti-phishing/anti-phishing.md)
+[SCOPD Phishing attack simulator](integrations/phishing.md)
 
-[SCOPD DLP](integrations/dlp/dlp.md)
+[SCOPD DLP](integrations/dlp.md)
 
-[VirusTotal](integrations/virustotal/virustotal.md)
+[VirusTotal](integrations/virustotal.md)
 
-[FortiGate](integrations/fortigate/fortigate.md)
+[FortiGate](integrations/fortigate.md)
