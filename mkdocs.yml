@@ -1,12 +1,10 @@
 site_name: SCOPD SIEM
-
-site_url: https://netanelpo.github.io/scopd-integrations-docs/
-use_directory_urls: true
-
 theme:
   name: material
 
 nav:
+  - Integrations: index.md
+  - Features: features.md
   - XDR: xdr.md
 
 plugins:
