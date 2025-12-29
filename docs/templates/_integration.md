@@ -8,7 +8,7 @@ Add the following configuration within the `<ossec_config>` block of the `/var/o
 
   <name>{{ name_tag }}</name>
 
-  <api_key>{YOUR_API_KEY}</api_key>
+  <api_key>{YOUR_API_KEY}</api_key><!-- Replace with your API key -->
 
   <group>{{ group_tag }}</group>
 
