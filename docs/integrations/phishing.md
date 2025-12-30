@@ -14,7 +14,7 @@ local_rules: scopd_rules.xml
 - Agent file: `/var/ossec/etc/ossec.conf`
 
 Add one block:
-```md
+```xml
 <ossec_config>
 
   <localfile>

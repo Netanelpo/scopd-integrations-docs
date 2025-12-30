@@ -2,7 +2,7 @@
 
 Add the following configuration in between the `<ossec_config>` tags of the SIEM server `/var/ossec/etc/ossec.conf` file to listen for syslog messages on TCP port 514:
 
-```md
+```xml
 <remote>
   <connection>syslog</connection>
   <port>514</port>
@@ -17,6 +17,6 @@ This enables receiving syslog messages over UDP/514 from any source.
 
 - Confirm the Syslog port is listening:
 
-```md
+```bash
 sudo ss -lunpt | grep 514
 ```

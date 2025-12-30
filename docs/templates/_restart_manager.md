@@ -1,4 +1,4 @@
 ### Restart SIEM Manager
-```md
+```bash
 sudo systemctl restart wazuh-manager
 ```

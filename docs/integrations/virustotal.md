@@ -13,12 +13,12 @@ Add the below entry within the `<syscheck>` block to monitor and alert files det
 
 ### Linux example
 file path `/var/ossec/etc/ossec.conf`
-```md
+```xml
 <directories check_all="yes" realtime="yes">/media/user/software</directories>
 ```
 ### Windows example:
 file path `C:\Program Files (x86)\ossec-agent`
-```md
+```xml
 <directories check_all="yes" realtime="yes">C:\Users\Public\Downloads</directories>
 ```
 
@@ -36,7 +36,7 @@ Create a test directory and download the EICAR test file to trigger **File Integ
 
 Run the following commands on the Linux agent:
 
-```md
+```bash
 sudo mkdir -p /media/user/software
 sudo curl -Lo /media/user/software/suspicious-file.exe https://secure.eicar.org/eicar.com
 ```
@@ -51,7 +51,7 @@ Download the EICAR test file to trigger **File Integrity Monitoring (FIM)** and 
 
 Run the following command in **PowerShell as Administrator**:
 
-```md
+```powershell
 Invoke-WebRequest -Uri "https://secure.eicar.org/eicar.com" `
   -OutFile "C:\Users\Public\Downloads\eicar.com"
 ```

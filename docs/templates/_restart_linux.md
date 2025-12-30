@@ -1,4 +1,4 @@
 ### Restart Linux Agent
-```md
+```bash
 sudo systemctl restart wazuh-agent
 ```

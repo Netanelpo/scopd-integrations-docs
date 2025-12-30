@@ -1,5 +1,5 @@
 ### Restart Windows Agent
 Run the following command in **PowerShell as Administrator**:
-```md
+```powershell
 Restart-Service wazuh
 ```
