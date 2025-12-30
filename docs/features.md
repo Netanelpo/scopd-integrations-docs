@@ -1,6 +1,6 @@
 # SCOPD SIEM – Features
 
-![Scopd DLP](scopd.jpg)
+![Scopd DLP](assets/scopd.jpg)
 
 SCOPD is a lightweight SIEM with custom integrations and enhancements.
 

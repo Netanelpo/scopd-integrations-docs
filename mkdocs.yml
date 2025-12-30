@@ -1,6 +1,8 @@
 site_name: SCOPD SIEM
 theme:
   name: material
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
 
 nav:
   - Integrations: index.md
