@@ -1,8 +1,8 @@
 ## SIEM server configuration
 
-SIEM comes with a set of default scripts used in Active Response. These scripts are located in the /var/ossec/active-response/bin/ directory on Linux/Unix endpoints. The firewall-drop active response script works with Linux/Unix operating systems. It uses iptables to block malicious IP addresses.
+SIEM comes with a set of default scripts used in Active Response. These scripts are located in the `/var/ossec/active-response/bin/` directory on Linux/Unix endpoints. The firewall-drop active response script works with Linux/Unix operating systems. It uses iptables to block malicious IP addresses.
 
-1.) Open the SIEM server /var/ossec/etc/ossec.conf file and verify that a <command> block called firewall-drop with the following configuration is present within the <ossec_config> block:
+1.) Open the SIEM server `/var/ossec/etc/ossec.conf` file and verify that a `<command>` block called firewall-drop with the following configuration is present within the `<ossec_config>` block:
 
 <details>
   <summary>Firewall drop active response command</summary>
@@ -17,7 +17,7 @@ SIEM comes with a set of default scripts used in Active Response. These scripts 
 
 </details>
 
-The <command> block contains information about the action to be executed on the SIEM agent:
+The `<command>` block contains information about the action to be executed on the SIEM agent:
 
 * ```<name>```: Sets a name for the command. In this case, firewall-drop.
 
@@ -30,7 +30,7 @@ The <command> block contains information about the action to be executed on the 
 Note You can create your own custom script to block an IP address or perform any other action.
 </details>
 
-2.) Add the <active-response> block below to the SIEM server /var/ossec/etc/ossec.conf configuration file:
+2.) Add the <active-response> block below to the SIEM server `/var/ossec/etc/ossec.conf` configuration file:
 
 <details>
   <summary>Active response configuration</summary>
@@ -89,7 +89,7 @@ sudo apt update && sudo apt install -y hydra
 
 3.) On the Ubuntu endpoint, create a text file with 10 random passwords.
 
-4.) Run Hydra from the Ubuntu endpoint to execute brute-force attacks against the RHEL endpoint using the command below. Replace <RHEL_USERNAME> with the username of the RHEL endpoint, <PASSWD_LIST.txt> with the path to the passwords file created in the previous step, and <RHEL_IP> with the IP address of the RHEL endpoint:
+4.) Run Hydra from the Ubuntu endpoint to execute brute-force attacks against the RHEL endpoint using the command below. Replace `<RHEL_USERNAME>` with the username of the RHEL endpoint, `<PASSWD_LIST.txt>` with the path to the passwords file created in the previous step, and `<RHEL_IP>` with the IP address of the RHEL endpoint:
 
 ```bash
 sudo hydra -t 4 -l <RHEL_USERNAME> -P <PASSWD_LIST.txt> <RHEL_IP> ssh
@@ -114,7 +114,7 @@ PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
 
 ## Firing active response
 
-Monitored Linux/Unix endpoints have a log file at /var/ossec/logs/active-responses.log where SIEM registers the active response activities. By default, the SIEM server monitors the Active Response log file. You can find the relevant section in the SIEM server /var/ossec/etc/ossec.conf configuration file as shown below:
+Monitored Linux/Unix endpoints have a log file at `/var/ossec/logs/active-responses.log` where SIEM registers the active response activities. By default, the SIEM server monitors the Active Response log file. You can find the relevant section in the SIEM server `/var/ossec/etc/ossec.conf` configuration file as shown below:
 
 <details>
   <summary>Active response log monitoring configuration</summary>
@@ -130,4 +130,4 @@ Monitored Linux/Unix endpoints have a log file at /var/ossec/logs/active-respons
 
 When the active response triggers, a corresponding alert appears on the SIEM dashboard.
 
-The alert appears because rule ID 651 is part of the default /var/ossec/ruleset/rules/0015-ossec_rules.xml rule file on the SIEM server. If you create a custom active response script, you must add a proper custom rule to analyze the Active Response logs that are generated.
+The alert appears because rule ID 651 is part of the default `/var/ossec/ruleset/rules/0015-ossec_rules.xml` rule file on the SIEM server. If you create a custom active response script, you must add a proper custom rule to analyze the Active Response logs that are generated.
