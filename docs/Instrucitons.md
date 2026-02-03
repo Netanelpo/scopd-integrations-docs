@@ -1,9 +1,7 @@
-[SCOPD RU language](instructions/rulang.md)
+[Online install](instructions/online_install.md)
 
-[SCOPD Dashhboard Update](instructions/dashboard_updating.md)
+[Local install](instructions/local_install.md)
 
-[SCOPD online install](instructions/online_install.md)
+[RU language in Dashboard](instructions/rulang.md)
 
-[SCOPD local install](instructions/local_install.md)
-
-
+[Dashhboard Update](instructions/dashboard_updating.md)
