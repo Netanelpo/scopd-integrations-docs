@@ -5,3 +5,5 @@
 [VirusTotal](integrations/virustotal.md)
 
 [FortiGate](integrations/fortigate.md)
+
+[AWSCloudTrail](integrations/AWS_CloudTrail.md)
