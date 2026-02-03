@@ -1,4 +1,4 @@
-# AWS CloudTrail integration with Wazuh 4.13
+# AWS CloudTrail integration with SCOPD SIEM
 
 ## 1. Create an AWS account
 
@@ -24,7 +24,7 @@
 2. Click **Create bucket**.
 3. Fill in:
 
-   * **Bucket name**: `wazuh-cloudtrail-logs-<name>`
+   * **Bucket name**: `scopd-cloudtrail-logs-<name>`
    * **Region**: the same region you selected above
 4. Keep public access **blocked**.
 5. Leave other settings as default.
@@ -38,7 +38,7 @@
 2. Click **Create trail**.
 3. Fill in:
 
-   * **Trail name**: `wazuh-cloudtrail-trail-<name>`
+   * **Trail name**: `scopd-cloudtrail-trail-<name>`
 4. In **Storage location** choose:
 
    * **Use existing bucket** → select your bucket (from the previous section).
@@ -50,9 +50,9 @@ Now CloudTrail will store `.json.gz` files in your S3 bucket.
 
 ---
 
-## 4. Create an IAM policy for Wazuh
+## 4. Create an IAM policy for SIEM
 
-Wazuh must have permissions to:
+SCOPD SIEM must have permissions to:
 
 * `s3:ListBucket`
 * `s3:GetObject`
@@ -71,12 +71,12 @@ Wazuh must have permissions to:
     {
       "Effect": "Allow",
       "Action": ["s3:ListBucket"],
-      "Resource": "arn:aws:s3:::wazuh-cloudtrail-logs-<name>"
+      "Resource": "arn:aws:s3:::scopd-cloudtrail-logs-<name>"
     },
     {
       "Effect": "Allow",
       "Action": ["s3:GetObject"],
-      "Resource": "arn:aws:s3:::wazuh-cloudtrail-logs-<name>/*"
+      "Resource": "arn:aws:s3:::scopd-cloudtrail-logs-<name>/*"
     }
   ]
 }
@@ -84,7 +84,7 @@ Wazuh must have permissions to:
 
 </details>
 
-4. Name the policy: `WazuhCloudTrailAccess`
+4. Name the policy: `ScopdCloudTrailAccess`
 5. Create the policy.
 
 ---
@@ -92,10 +92,10 @@ Wazuh must have permissions to:
 ## 5. Create an IAM user and access keys
 
 1. Go to **IAM → Users → Create user**.
-2. User name: `wazuh-aws-reader`
+2. User name: `scopd-aws-reader`
 3. In **Permissions** choose **Attach policies directly** and attach:
 
-   * `WazuhCloudTrailAccess`
+   * `ScopdCloudTrailAccess`
 4. Finish user creation.
 5. On the user page, click **Create access key**.
 
@@ -103,9 +103,9 @@ Save the **Access key ID** and **Secret access key** — you will need them late
 
 ---
 
-## 6. Configure AWS credentials on the Wazuh Manager
+## 6. Configure AWS credentials on the SIEM Manager
 
-On the Wazuh server:
+On the SIEM server:
 
 ```bash
 sudo su -
@@ -116,7 +116,7 @@ nano /root/.aws/credentials
 Paste:
 
 ```ini
-[wazuh-aws]
+[scopd-aws]
 aws_access_key_id = <your AccessKeyID>
 aws_secret_access_key = <your SecretAccessKey>
 ```
@@ -130,7 +130,7 @@ nano /root/.aws/config
 ```
 
 ```ini
-[profile wazuh-aws]
+[profile scopd-aws]
 region = eu-north-1
 output = json
 ```
@@ -161,7 +161,7 @@ Verification:
 ## 8. Test the AWS profile
 
 ```bash
-/usr/local/bin/aws sts get-caller-identity --profile wazuh-aws
+/usr/local/bin/aws sts get-caller-identity --profile scopd-aws
 ```
 
 If you see `UserId` and `Arn` in the output, the profile works correctly.
@@ -171,7 +171,7 @@ If you see `UserId` and `Arn` in the output, the profile works correctly.
 ## 9. Test access to the S3 bucket
 
 ```bash
-/usr/local/bin/aws s3 ls s3://wazuh-cloudtrail-logs-<name> --profile wazuh-aws
+/usr/local/bin/aws s3 ls s3://scopd-cloudtrail-logs-<name> --profile scopd-aws
 ```
 
 If you see something like:
@@ -184,9 +184,9 @@ PRE AWSLogs/
 
 ---
 
-## 10. Configure Wazuh for AWS S3
+## 10. Configure SIEM for AWS S3
 
-Open the Wazuh configuration:
+Open the SCOPD SIEM configuration:
 
 ```bash
 nano /var/ossec/etc/ossec.conf
@@ -205,7 +205,7 @@ Add the following **before** `</ossec_config>`:
   <skip_on_error>no</skip_on_error>
   <bucket type="cloudtrail">
     <name>wazuh-cloudtrail-logs-<name></name>
-    <aws_profile>wazuh-aws</aws_profile>
+    <aws_profile>scopd-aws</aws_profile>
   </bucket>
 </wodle>
 ```
@@ -216,7 +216,7 @@ Save the file.
 
 ---
 
-## 11. Restart Wazuh Manager
+## 11. Restart SIEM Manager
 
 ```bash
 sudo systemctl restart wazuh-manager
@@ -248,16 +248,16 @@ CloudTrail writes files to S3 with a delay of about 1–5 minutes.
 Check:
 
 ```bash
-/usr/local/bin/aws s3 ls s3://wazuh-cloudtrail-logs-<name>/AWSLogs/ --recursive --profile wazuh-aws
+/usr/local/bin/aws s3 ls s3://scopd-cloudtrail-logs-<name>/AWSLogs/ --recursive --profile scopd-aws
 ```
 
-If you see `.json.gz` files → Wazuh will process them.
+If you see `.json.gz` files → SCOPD SIEM will process them.
 
 ---
 
 ## 14. Check in the Wazuh Dashboard
 
-Open the **Amazon Web Services** section in the Wazuh dashboard.
+Open the **Amazon Web Services** section in the SIEM dashboard.
 
-Integration is complete — CloudTrail events are now ingested into Wazuh.
+Integration is complete — CloudTrail events are now ingested into SCOPD SIEM.
 
