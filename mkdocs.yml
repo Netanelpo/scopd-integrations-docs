@@ -10,6 +10,7 @@ nav:
   - Integrations: index.md
   - Features: features.md
   - XDR: xdr.md
+  - Instructions: Instrucitons.md
 
 plugins:
   - search
