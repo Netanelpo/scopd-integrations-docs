@@ -38,7 +38,7 @@ Once the token is saved, you can start using the assistant:
 * You can ask about:
 
   * SCOPD SIEM usage
-  * Wazuh configuration and rules
+  * SIEM configuration and rules
   * general SIEM/SOC topics
   * step-by-step instructions, troubleshooting, etc.
 
