@@ -7,3 +7,5 @@
 [FortiGate](integrations/fortigate.md)
 
 [AWSCloudTrail](integrations/AWS_CloudTrail.md)
+
+[ChatGPT](integrations/chatgpt.md)
