@@ -61,12 +61,12 @@ fi
 
 ---
 
-### 2.3. Removing old Wazuh installations (if any)
+### 2.3. Removing old SIEM installations (if any)
 
 To avoid conflicts, clean up everything that might remain:
 
 <details>
-  <summary>Stop services and remove old Wazuh components</summary>
+  <summary>Stop services and remove old SIEM components</summary>
 
 ```bash
 # stop services
