@@ -224,7 +224,7 @@ sudo systemctl restart wazuh-manager
 
 ---
 
-## 12. Check Wazuh logs
+## 12. Check SIEM logs
 
 ```bash
 sudo tail -f /var/ossec/logs/ossec.log | grep aws
@@ -255,7 +255,7 @@ If you see `.json.gz` files → SCOPD SIEM will process them.
 
 ---
 
-## 14. Check in the Wazuh Dashboard
+## 14. Check in the SIEM Dashboard
 
 Open the **Amazon Web Services** section in the SIEM dashboard.
 
