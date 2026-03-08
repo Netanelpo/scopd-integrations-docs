@@ -1,6 +1,6 @@
 # RU Language in Dashboard SIEM
 
-## Change Wazuh Dashboard UI language to English
+## Change SIEM Dashboard UI language to English
 
 1. Open the config file:
 
