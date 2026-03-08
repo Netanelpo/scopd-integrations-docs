@@ -10,7 +10,7 @@
    sudo cp /etc/wazuh-dashboard/opensearch_dashboards.yml /etc/wazuh-dashboard/opensearch_dashboards.yml.bak
    ```
 
-3. Stop the Wazuh Dashboard service:
+3. Stop the SIEM Dashboard service:
 
    ```bash
    sudo systemctl stop wazuh-dashboard
